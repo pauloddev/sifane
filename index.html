@@ -40,6 +40,7 @@
   --ease-io:cubic-bezier(.76,0,.24,1);
   color-scheme:light;
 }
+@font-face{font-family:"Allura";src:url("m/allura.woff2") format("woff2");font-display:swap}
 @font-face{font-family:"AgelastPT";src:url("m/agelast-pt.ttf") format("truetype");font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -152,9 +153,13 @@ body.locked{overflow:hidden}
 
 /* maison (CEO) */
 .maison .grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,7vw,110px);align-items:center}
-.maison .arch{aspect-ratio:2/3}
+.maison .grid{align-items:stretch!important}
+.maison .arch{aspect-ratio:auto;min-height:560px}
+.maison .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .maison h2{font-size:clamp(1.8rem,3.1vw,2.8rem);margin:18px 0 28px}
-.maison h2 em{font-style:italic;color:var(--vinho)}
+.maison h2 em{color:var(--vinho)}
+.ceo-name{font-family:"Allura","Great Vibes",cursive;font-size:clamp(3.4rem,6vw,5.4rem);line-height:1;color:var(--vinho);margin:10px 0 6px;letter-spacing:.01em}
+.maison .sig span b{display:block;font-family:"Allura",cursive;font-weight:400;font-size:2rem;letter-spacing:0;text-transform:none;color:var(--vinho);line-height:1;margin-bottom:4px}
 .maison .eyebrow{color:var(--vinho)}
 .maison p+p{margin-top:18px}
 .maison .sig{display:flex;align-items:center;gap:18px;margin-top:36px}
@@ -286,8 +291,9 @@ body.locked{overflow:hidden}
 .final p{margin:26px auto 40px;max-width:44ch;color:rgba(239,230,215,.82)}
 .final .ctas{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
 .chan{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,40px);max-width:820px;margin:0 auto;text-align:left}
-.chan .col{display:grid;gap:12px;align-content:start}
-.chan .eyebrow{color:var(--ouro);margin-bottom:6px;text-align:center}
+.chan .col{display:grid;grid-template-rows:auto repeat(3,1fr);gap:12px;align-content:start}
+.chan .eyebrow{color:var(--ouro);margin-bottom:6px;text-align:center;white-space:nowrap;line-height:1.4}
+.chan .btn{min-height:56px}
 .chan .btn{width:100%}
 .chan .vip svg{width:14px;height:14px;color:var(--ouro)}
 .mapbox{margin-top:22px;border-radius:6px;overflow:hidden;aspect-ratio:16/9;background:var(--creme);position:relative}
@@ -334,7 +340,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--creme)}
   .use .feat{grid-template-columns:1fr}
   .use .right{gap:30px}
   .local .arch{max-width:none;width:100%;min-height:0;aspect-ratio:4/5}
-  .maison .arch{max-width:520px;width:100%}
+  .maison .arch{max-width:none;width:100%;min-height:0;aspect-ratio:4/5}
 }
 @media (max-width:620px){
   .hero{padding-top:110px}
@@ -428,18 +434,19 @@ footer a{text-decoration:none}footer a:hover{color:var(--creme)}
 <!-- MAISON -->
 <section class="sec maison" aria-labelledby="h-maison">
   <div class="wrap grid">
-    <div class="arch mask"><img class="par" data-speed=".05" src="m/ceo.jpg" alt="Fundadora da Sífane com conjunto de alfaiataria marrom e colar dourado"></div>
+    <div class="arch mask"><img class="par" data-speed=".05" src="m/ceo.jpg" alt="Estefane Gomes, CEO da Sífane, com conjunto de alfaiataria marrom e colar dourado"></div>
     <div>
-      <span class="eyebrow rv">A maison</span>
-      <h2 id="h-maison" class="rv" style="--d:.1s">Cada peça passa pelo nosso olhar <em>antes de chegar ao seu.</em></h2>
-      <p class="lead rv" style="--d:.2s">A Sífane nasceu de um jeito simples de vender roupa: escolher só o que a gente usaria. Por isso a arara muda sempre, as cores chegam em várias opções e cada modelo é provado em frente ao espelho antes de ir para o Instagram.</p>
-      <p class="lead rv" style="--d:.28s">Você pode vir até a loja, pedir pelo WhatsApp ou comprar pela loja online. O cuidado é o mesmo.</p>
+      <span class="eyebrow rv">CEO &amp; fundadora</span>
+      <p class="ceo-name rv" style="--d:.08s">Estefane Gomes</p>
+      <h2 id="h-maison" class="rv" style="--d:.14s">Cada peça passa pelo olhar dela <em>antes de chegar ao seu.</em></h2>
+      <p class="lead rv" style="--d:.2s">Estefane criou a Sífane com um critério simples: só entra na arara o que ela mesma usaria. É ela quem escolhe cada modelo, aprova as cores e prova os looks em frente ao espelho antes de irem para o Instagram.</p>
+      <p class="lead rv" style="--d:.28s">Na loja de Caruaru, no WhatsApp ou na loja online, o cuidado é o mesmo: atendimento próximo para ajudar você a encontrar o look certo.</p>
       <div class="pillars">
         <div class="rv" style="--d:.3s"><h3>Curadoria</h3><p>Peças escolhidas uma a uma, em várias cores do mesmo modelo.</p></div>
         <div class="rv" style="--d:.38s"><h3>Provador</h3><p>Todo look é vestido e filmado antes de ser oferecido.</p></div>
         <div class="rv" style="--d:.46s"><h3>Atendimento</h3><p>Ajuda para escolher tamanho, combinação e ocasião.</p></div>
       </div>
-      <div class="sig rv" style="--d:.5s"><img src="m/logo_sym.png" alt=""><span>Sífane &middot; moda feminina</span></div>
+      <div class="sig rv" style="--d:.5s"><img src="m/logo_sym.png" alt=""><span><b>Estefane Gomes</b>CEO da Sífane</span></div>
     </div>
   </div>
 </section>
@@ -653,7 +660,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--creme)}
         <a class="btn btn-linha" href="https://www.instagram.com/sifaneoficial/" target="_blank" rel="noopener">Seguir @sifaneoficial</a>
       </div>
       <div class="col">
-        <span class="eyebrow">Grupos VIP · novidades primeiro</span>
+        <span class="eyebrow">Grupos VIP</span>
         <a class="btn btn-linha vip" href="https://chat.whatsapp.com/FugpuyByPsk0BBVjeNAT89" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6Z"/></svg> Grupo VIP 1</a>
         <a class="btn btn-linha vip" href="https://chat.whatsapp.com/KOdOldZ5NNtLIGGAe3b8vx" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6Z"/></svg> Grupo VIP 2</a>
         <a class="btn btn-linha vip" href="https://chat.whatsapp.com/K24YpHoN0ZZ7lXDE6bkDyu" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5l2.6 7.9 7.9 2.6-7.9 2.6L12 22.5l-2.6-7.9L1.5 12l7.9-2.6Z"/></svg> Grupo VIP 3</a>

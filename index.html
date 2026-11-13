@@ -40,7 +40,6 @@
   --ease-io:cubic-bezier(.76,0,.24,1);
   color-scheme:light;
 }
-@font-face{font-family:"Allura";src:url("m/allura.woff2") format("woff2");font-display:swap}
 @font-face{font-family:"AgelastPT";src:url("m/agelast-pt.ttf") format("truetype");font-display:swap}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -158,8 +157,7 @@ body.locked{overflow:hidden}
 .maison .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
 .maison h2{font-size:clamp(1.8rem,3.1vw,2.8rem);margin:18px 0 28px}
 .maison h2 em{color:var(--vinho)}
-.ceo-name{font-family:"Allura","Great Vibes",cursive;font-size:clamp(3.4rem,6vw,5.4rem);line-height:1;color:var(--vinho);margin:10px 0 6px;letter-spacing:.01em}
-.maison .sig span b{display:block;font-family:"Allura",cursive;font-weight:400;font-size:2rem;letter-spacing:0;text-transform:none;color:var(--vinho);line-height:1;margin-bottom:4px}
+.ceo-name{font-family:var(--display);font-size:clamp(2.2rem,4vw,3.4rem);line-height:1.1;letter-spacing:.08em;text-transform:uppercase;color:var(--vinho);margin:12px 0 4px;-webkit-text-stroke:.9px currentColor;paint-order:stroke fill}
 .maison .eyebrow{color:var(--vinho)}
 .maison p+p{margin-top:18px}
 .maison .sig{display:flex;align-items:center;gap:18px;margin-top:36px}
@@ -446,7 +444,6 @@ footer a{text-decoration:none}footer a:hover{color:var(--creme)}
         <div class="rv" style="--d:.38s"><h3>Provador</h3><p>Todo look é vestido e filmado antes de ser oferecido.</p></div>
         <div class="rv" style="--d:.46s"><h3>Atendimento</h3><p>Ajuda para escolher tamanho, combinação e ocasião.</p></div>
       </div>
-      <div class="sig rv" style="--d:.5s"><img src="m/logo_sym.png" alt=""><span><b>Estefane Gomes</b>CEO da Sífane</span></div>
     </div>
   </div>
 </section>

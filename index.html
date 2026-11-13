@@ -262,7 +262,8 @@ body.locked{overflow:hidden}
 
 /* local */
 .local .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:stretch}
-.local .arch{aspect-ratio:2/3}
+.local .arch{aspect-ratio:auto;align-self:stretch;min-height:520px}
+.local .arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .local .info{display:flex;flex-direction:column;justify-content:center}
 .local h2{font-size:clamp(1.8rem,3.1vw,2.8rem);margin:18px 0 28px}
 .local h2 em{font-style:italic;color:var(--vinho)}
@@ -332,7 +333,7 @@ footer a{text-decoration:none}footer a:hover{color:var(--creme)}
   .night .txt{grid-column:1/-1;aspect-ratio:auto;gap:30px;order:-1}
   .use .feat{grid-template-columns:1fr}
   .use .right{gap:30px}
-  .local .arch{max-width:520px;width:100%}
+  .local .arch{max-width:none;width:100%;min-height:0;aspect-ratio:4/5}
   .maison .arch{max-width:520px;width:100%}
 }
 @media (max-width:620px){
@@ -687,8 +688,8 @@ var LOJA = {
   endereco: "Av. Porto Alegre, 189, Centro, Caruaru-PE, 55004-270",
   mapsUrl: "https://www.google.com/maps/search/?api=1&query=-8.284311,-35.9725404",
   horarios: [                   // [dia, abre, fecha] — use null para fechado
-    ["Segunda", null, null],["Terça", null, null],["Quarta", null, null],
-    ["Quinta", null, null],["Sexta", null, null],["Sábado", null, null],["Domingo", null, null]
+    ["Segunda", "09:00", "18:00"],["Terça", "09:00", "18:00"],["Quarta", "09:00", "18:00"],
+    ["Quinta", "09:00", "18:00"],["Sexta", "09:00", "18:00"],["Sábado", "09:00", "14:00"],["Domingo", "09:00", "16:00"]
   ]
 };
 /* ======================================== */
